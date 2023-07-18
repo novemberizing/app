@@ -1,6 +1,6 @@
 {
   "name": "@novemberizing/app",
-  "version": "0.0.13",
+  "version": "0.0.15",
   "description": "",
   "main": "src/index.js",
   "type": "module",
@@ -15,7 +15,8 @@
     "novemberizing",
     "nodejs",
     "javascript",
-    "application"
+    "application",
+    "framework"
   ],
   "homepage": "https://novemberizing.github.io/app",
   "scripts": {
