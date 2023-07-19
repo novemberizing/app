@@ -42,6 +42,8 @@ export default class ApplicationServerExpress extends ApplicationServer {
 
         this.#express = express();
 
+        this.#express.use(express.json());
+
         if(config.services) {
             const services = Object.keys(config.services);
 
