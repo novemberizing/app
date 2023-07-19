@@ -50,17 +50,6 @@ export default class ApplicationServerService {
     }
 
     /**
-     * Install service
-     */
-    async install() {
-        const result = {};
-        for(const module of this.#modules) {
-            result[module.constructor.name] = await module.install();
-        }
-        return result;
-    }
-
-    /**
      * Service on
      */
     async on() {
