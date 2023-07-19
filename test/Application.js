@@ -22,6 +22,15 @@ Log.config = {
 };
 
 describe(name, () => {
+    it(" 0000 Application install", async () => {
+        await Application.on(await Config.gen({ url: "fs://./test/configure.json" }));
+
+        await Application.administrator.install();
+
+        await Application.off();
+
+    });
+    return;
     it(" 0001 Application", async () => {
         await Application.on(await Config.gen({ url: "fs://./test/configure.json" }));
 

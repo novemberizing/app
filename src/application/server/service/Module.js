@@ -34,7 +34,7 @@ export default class ApplicationServerServiceModule {
      * Install method
      */
     async install() {
-
+        return true;
     }
 
     /**

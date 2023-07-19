@@ -82,4 +82,12 @@ export default class ApplicationServer {
 
         throw new ApplicationExceptionUnsupported();
     }
+
+    async install() {
+        const result = {};
+        for(const service of this.#services.values()){
+            result[service.constructor.name] = await service.install();
+        }
+        return result;
+    }
 }
