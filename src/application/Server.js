@@ -13,6 +13,8 @@ export default class ApplicationServer {
 
     #config = null;
 
+    get config(){ return this.#config; }
+
     /**
      * ApplicationServer's constructor
      * 
