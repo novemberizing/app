@@ -2,6 +2,7 @@
  * @module          ApplicationServerExpress
  */
 import express from "express";
+import cors from "cors";
 
 import Log from "@novemberizing/log";
 
@@ -41,6 +42,13 @@ export default class ApplicationServerExpress extends ApplicationServer {
         if(isNaN(this.#port)) { throw new ApplicationExceptionInvalidParameter(); }
 
         this.#express = express();
+
+        if(config.cors) {
+            this.#express.use(cors({
+                origin: config.cors,
+                credentials: true
+            }));
+        }
 
         this.#express.use(express.json());
 
