@@ -11,6 +11,20 @@ import ApplicationServerServiceModuleFactory from "./service/module/Factory.js";
  * Application server service
  */
 export default class ApplicationServerService {
+    /**
+     * 함수를 수행하는 유틸리티 함수로 예외가 발생했을 경우 exception 함수를 수행하게 됩니다.
+     * 
+     * @param {Function} func           수행할 함수
+     * @param {Function} exception      예외가 발생했을 경우 처리할 함수
+     */
+    static async call(func, exception) {
+        try {
+            await func();
+        } catch(e) {
+            if(exception) await exception(e);
+        }
+    }
+
     #path = null;
     #server = null;
     #config = null;
