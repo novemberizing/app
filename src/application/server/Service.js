@@ -25,6 +25,21 @@ export default class ApplicationServerService {
         }
     }
 
+    /**
+     * 예외가 발생했을 경우 사용자에게 전송하기 위해서 메시지를 만든다.
+     * 
+     * @param {Error} e 
+     * @returns {Object}
+     */
+    static error(e) {
+        /** TODO: 보다 좋은 로깅을 하자. */
+        console.log(e);
+        return {
+            name: e.name,
+            message: e.message
+        }
+    }
+
     #path = null;
     #server = null;
     #config = null;
