@@ -35,8 +35,10 @@ export default class ApplicationServerService {
         /** TODO: 보다 좋은 로깅을 하자. */
         console.log(e);
         return {
-            name: e.name,
-            message: e.message
+            exception: {
+                name: e.name,
+                message: e.message
+            }
         }
     }
 
